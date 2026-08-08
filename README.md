@@ -37,6 +37,16 @@ This project builds a complete, end-to-end **data preparation pipeline** for a r
 
 **Key modules used:** `SimpleImputer` · `KNNImputer` · `StandardScaler` · `MinMaxScaler` · `LabelEncoder` · `OneHotEncoder` (scikit-learn) &nbsp;|&nbsp; `zscore`, `winsorize` (scipy)
 
+---
+
+## 🎬 Project Demo
+
+[![Watch Demo](https://img.shields.io/badge/Watch%20Demo-Google%20Drive-blue?style=for-the-badge&logo=googledrive&logoColor=white)](https://drive.google.com/file/d/1215xHkwTyCsBinIyIcUpixhc1skNKj2z/view?usp=sharing)
+
+📹 Click the badge above to watch the complete project demonstration.
+
+---
+
 ## 🧬 Dataset Structure
 
 | Source | Shape | Join Key |
