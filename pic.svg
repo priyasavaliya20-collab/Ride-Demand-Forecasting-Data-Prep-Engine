@@ -12,21 +12,20 @@
     <stop offset="100%" stop-color="#020A1A"/>
   </linearGradient>
 
-  <!-- Main title -->
+  <!-- Title -->
   <linearGradient id="title" x1="0" y1="0" x2="1" y2="0">
     <stop offset="0%" stop-color="#FFFFFF"/>
     <stop offset="45%" stop-color="#5DEAFF"/>
     <stop offset="100%" stop-color="#8CA5FF"/>
   </linearGradient>
 
-  <!-- Transformation -->
-  <linearGradient id="transform" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0%" stop-color="#62F0FF"/>
+  <!-- Scale -->
+  <linearGradient id="scale" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#6AF3FF"/>
     <stop offset="50%" stop-color="#168FC4"/>
-    <stop offset="100%" stop-color="#725CFF"/>
+    <stop offset="100%" stop-color="#6C63FF"/>
   </linearGradient>
 
-  <!-- Glow -->
   <filter id="glow">
     <feGaussianBlur stdDeviation="6" result="blur"/>
     <feMerge>
@@ -36,7 +35,7 @@
   </filter>
 
   <filter id="bigGlow">
-    <feGaussianBlur stdDeviation="13" result="blur"/>
+    <feGaussianBlur stdDeviation="12" result="blur"/>
     <feMerge>
       <feMergeNode in="blur"/>
       <feMergeNode in="SourceGraphic"/>
@@ -58,8 +57,7 @@
 
 <!-- Grid -->
 
-<g stroke="#61EFFF"
-   opacity=".07">
+<g stroke="#61EFFF" opacity=".07">
 
   <path d="M0 100H1600"/>
   <path d="M0 200H1600"/>
@@ -78,7 +76,7 @@
 
 
 <!-- ================================================= -->
-<!-- TOP DATA STREAM -->
+<!-- TOP DATA NETWORK -->
 <!-- ================================================= -->
 
 <path d="M70 120
@@ -90,9 +88,7 @@
       stroke-width="2"
       opacity=".3"/>
 
-
-<g fill="#64F1FF"
-   filter="url(#glow)">
+<g fill="#64F1FF" filter="url(#glow)">
 
   <circle r="6">
 
@@ -107,204 +103,196 @@
 
 
 <!-- ================================================= -->
-<!-- RAW DATA -->
+<!-- BEFORE SCALING -->
 <!-- ================================================= -->
 
-<g transform="translate(95 190)"
-   filter="url(#glow)">
+<g transform="translate(80 185)">
 
-  <rect x="0"
-        y="0"
-        width="190"
-        height="125"
-        rx="20"
-        fill="#092D4D"
+  <!-- Axis -->
+
+  <line x1="25" y1="135"
+        x2="270" y2="135"
         stroke="#5DEAFF"
-        stroke-width="3"/>
+        stroke-width="2"
+        opacity=".35"/>
+
+  <line x1="25" y1="150"
+        x2="25" y2="15"
+        stroke="#5DEAFF"
+        stroke-width="2"
+        opacity=".35"/>
 
 
-  <!-- Uneven raw bars -->
+  <!-- Unequal features -->
 
-  <g fill="#4FCFE8">
+  <rect x="55" y="105"
+        width="18"
+        height="30"
+        rx="3"
+        fill="#55DCEF"/>
 
-    <rect x="25" y="68"
-          width="18"
-          height="38"
-          rx="3"/>
+  <rect x="90" y="65"
+        width="18"
+        height="70"
+        rx="3"
+        fill="#55DCEF"/>
 
-    <rect x="55" y="38"
-          width="18"
-          height="68"
-          rx="3"/>
+  <rect x="125" y="20"
+        width="18"
+        height="115"
+        rx="3"
+        fill="#55DCEF"/>
 
-    <rect x="85" y="82"
-          width="18"
-          height="24"
-          rx="3"/>
+  <rect x="160" y="88"
+        width="18"
+        height="47"
+        rx="3"
+        fill="#55DCEF"/>
 
-    <rect x="115" y="28"
-          width="18"
-          height="78"
-          rx="3"/>
-
-    <rect x="145" y="58"
-          width="18"
-          height="48"
-          rx="3"/>
-
-  </g>
+  <rect x="195" y="45"
+        width="18"
+        height="90"
+        rx="3"
+        fill="#55DCEF"/>
 
 
-  <!-- Data values -->
+  <!-- Highlight wide range -->
 
-  <text x="95"
-        y="116"
-        text-anchor="middle"
-        font-family="monospace"
-        font-size="10"
-        fill="#B8F8FF"
-        opacity=".7">
-
-    RAW VALUES
-
-  </text>
+  <path d="M125 18
+           L125 5
+           L220 5"
+        fill="none"
+        stroke="#FFB84D"
+        stroke-width="2"
+        stroke-dasharray="5 5"/>
 
 </g>
 
 
-<text x="190"
+<text x="210"
       y="350"
       text-anchor="middle"
       font-family="Arial"
       font-size="14"
       font-weight="600"
       letter-spacing="3"
-      fill="#8FEAF5">
+      fill="#FFB84D">
 
-  RAW DATA
+  BEFORE SCALING
 
 </text>
 
 
 <!-- ================================================= -->
-<!-- TRANSFORMATION FLOW -->
+<!-- SCALE ARROWS -->
 <!-- ================================================= -->
 
-<g fill="none"
-   stroke="#5DEAFF"
+<g stroke="#5DEAFF"
    stroke-width="4"
+   fill="none"
    stroke-linecap="round"
    filter="url(#glow)">
 
-  <path d="M300 250
-           C370 250 400 250 455 250"/>
+  <path d="M330 250
+           C380 250 400 250 445 250"/>
+
+  <path d="M680 250
+           C730 250 750 250 800 250"/>
 
 </g>
 
 
-<!-- Moving transformation particles -->
+<!-- Arrow heads -->
+
+<path d="M435 238
+         L455 250
+         L435 262Z"
+      fill="#5DEAFF"/>
+
+<path d="M790 238
+         L810 250
+         L790 262Z"
+      fill="#5DEAFF"/>
+
+
+<!-- Moving particles -->
 
 <circle r="6"
         fill="#FFFFFF"
         filter="url(#glow)">
 
   <animateMotion
-    dur="2s"
+    dur="1.8s"
     repeatCount="indefinite"
-    path="M300 250 C370 250 400 250 455 250"/>
+    path="M330 250 C380 250 400 250 445 250"/>
 
-  </circle>
-
-
-<!-- Arrow -->
-
-<path d="M445 238
-         L465 250
-         L445 262Z"
-      fill="#5DEAFF"
-      filter="url(#glow)"/>
+</circle>
 
 
 <!-- ================================================= -->
-<!-- TRANSFORMATION ENGINE -->
+<!-- SCALING ENGINE -->
 <!-- ================================================= -->
 
-<g transform="translate(465 175)"
+<g transform="translate(455 175)"
    filter="url(#bigGlow)">
 
-  <!-- Outer rotating ring -->
+  <!-- Outer ring -->
 
-  <circle cx="75"
+  <circle cx="90"
           cy="75"
           r="70"
-          fill="#083B5C"
+          fill="#073A59"
           stroke="#5DEAFF"
           stroke-width="3"
-          stroke-dasharray="12 9">
+          stroke-dasharray="12 8">
 
     <animateTransform
       attributeName="transform"
       type="rotate"
-      from="0 75 75"
-      to="360 75 75"
+      from="0 90 75"
+      to="360 90 75"
       dur="6s"
       repeatCount="indefinite"/>
 
   </circle>
 
 
-  <!-- Inner circle -->
+  <!-- Ruler -->
 
-  <circle cx="75"
-          cy="75"
-          r="45"
-          fill="url(#transform)"
-          opacity=".9"/>
-
-
-  <!-- Transformation arrows -->
-
-  <path d="M48 70
-           Q75 35 102 70"
-        fill="none"
-        stroke="#FFFFFF"
-        stroke-width="5"
-        stroke-linecap="round"/>
-
-  <path d="M94 62
-           L104 70
-           L94 78"
-        fill="none"
-        stroke="#FFFFFF"
-        stroke-width="4"
-        stroke-linecap="round"/>
+  <rect x="35"
+        y="48"
+        width="110"
+        height="55"
+        rx="10"
+        fill="url(#scale)"
+        stroke="#B8F9FF"
+        stroke-width="2"/>
 
 
-  <path d="M102 82
-           Q75 115 48 82"
-        fill="none"
-        stroke="#FFFFFF"
-        stroke-width="5"
-        stroke-linecap="round"/>
+  <!-- Scale marks -->
 
-  <path d="M56 74
-           L46 82
-           L56 90"
-        fill="none"
-        stroke="#FFFFFF"
-        stroke-width="4"
-        stroke-linecap="round"/>
+  <g stroke="#FFFFFF"
+     stroke-width="3">
+
+    <path d="M50 65V85"/>
+    <path d="M68 58V92"/>
+    <path d="M86 65V85"/>
+    <path d="M104 58V92"/>
+    <path d="M122 65V85"/>
+    <path d="M140 58V92"/>
+
+  </g>
 
 
   <!-- Center pulse -->
 
-  <circle cx="75"
+  <circle cx="90"
           cy="75"
           r="8"
           fill="#FFFFFF">
 
     <animate attributeName="r"
-             values="7;14;7"
+             values="7;15;7"
              dur="1.4s"
              repeatCount="indefinite"/>
 
@@ -313,83 +301,101 @@
 </g>
 
 
+<text x="545"
+      y="350"
+      text-anchor="middle"
+      font-family="Arial"
+      font-size="14"
+      font-weight="600"
+      letter-spacing="3"
+      fill="#5DEAFF">
+
+  SCALE FEATURES
+
+</text>
+
+
 <!-- ================================================= -->
-<!-- OUTPUT -->
+<!-- AFTER SCALING -->
 <!-- ================================================= -->
 
-<g transform="translate(700 190)"
-   filter="url(#glow)">
+<g transform="translate(820 185)">
 
-  <rect x="0"
-        y="0"
-        width="190"
-        height="125"
-        rx="20"
-        fill="#063C56"
-        stroke="#61EFFF"
-        stroke-width="3"/>
+  <!-- Axis -->
+
+  <line x1="25" y1="135"
+        x2="270" y2="135"
+        stroke="#5DEAFF"
+        stroke-width="2"
+        opacity=".35"/>
+
+  <line x1="25" y1="150"
+        x2="25" y2="15"
+        stroke="#5DEAFF"
+        stroke-width="2"
+        opacity=".35"/>
 
 
-  <!-- Normalized bars -->
+  <!-- Equal-scale bars -->
 
   <g fill="#4CFFB3">
 
-    <rect x="25" y="70"
+    <rect x="55" y="72"
           width="18"
-          height="36"
+          height="63"
           rx="3">
 
       <animate attributeName="height"
-               values="36;42;36"
+               values="63;55;63"
                dur="1.5s"
                repeatCount="indefinite"/>
 
     </rect>
 
-    <rect x="55" y="55"
+    <rect x="95" y="55"
           width="18"
-          height="51"
+          height="80"
           rx="3">
 
       <animate attributeName="height"
-               values="51;45;51"
+               values="80;70;80"
                dur="1.7s"
                repeatCount="indefinite"/>
 
     </rect>
 
-    <rect x="85" y="45"
+    <rect x="135" y="65"
           width="18"
-          height="61"
+          height="70"
           rx="3">
 
       <animate attributeName="height"
-               values="61;54;61"
-               dur="1.4s"
+               values="70;78;70"
+               dur="1.6s"
                repeatCount="indefinite"/>
 
     </rect>
 
-    <rect x="115" y="62"
+    <rect x="175" y="75"
           width="18"
-          height="44"
+          height="60"
           rx="3">
 
       <animate attributeName="height"
-               values="44;50;44"
+               values="60;68;60"
                dur="1.8s"
                repeatCount="indefinite"/>
 
     </rect>
 
-    <rect x="145" y="52"
+    <rect x="215" y="60"
           width="18"
-          height="54"
+          height="75"
           rx="3">
 
       <animate attributeName="height"
-               values="54;47;54"
-               dur="1.6s"
+               values="75;65;75"
+               dur="1.4s"
                repeatCount="indefinite"/>
 
     </rect>
@@ -397,17 +403,23 @@
   </g>
 
 
-  <path d="M22 108
-           Q90 78 168 88"
+  <!-- Normalized range -->
+
+  <rect x="45"
+        y="25"
+        width="210"
+        height="105"
+        rx="8"
         fill="none"
-        stroke="#FFFFFF"
-        stroke-width="2"
-        opacity=".7"/>
+        stroke="#4CFFB3"
+        stroke-width="1"
+        stroke-dasharray="5 6"
+        opacity=".4"/>
 
 </g>
 
 
-<text x="795"
+<text x="955"
       y="350"
       text-anchor="middle"
       font-family="Arial"
@@ -416,7 +428,7 @@
       letter-spacing="3"
       fill="#4CFFB3">
 
-  TRANSFORMED
+  SCALED FEATURES
 
 </text>
 
@@ -427,7 +439,7 @@
 
 <g text-anchor="middle">
 
-  <text x="1210"
+  <text x="1260"
         y="250"
         font-family="Arial, Helvetica, sans-serif"
         font-size="66"
@@ -436,12 +448,12 @@
         fill="url(#title)"
         filter="url(#glow)">
 
-    Data Transformation
+    Feature Scaling
 
   </text>
 
 
-  <text x="1210"
+  <text x="1260"
         y="305"
         font-family="Arial, Helvetica, sans-serif"
         font-size="17"
@@ -449,14 +461,14 @@
         letter-spacing="5"
         fill="#91EAF5">
 
-    SCALE • TRANSFORM • NORMALIZE
+    STANDARDIZE • NORMALIZE • BALANCE
 
   </text>
 
 
   <!-- Animated underline -->
 
-  <rect x="960"
+  <rect x="1010"
         y="335"
         width="500"
         height="3"
@@ -469,7 +481,7 @@
              repeatCount="indefinite"/>
 
     <animate attributeName="x"
-             values="1210;960;1210"
+             values="1260;1010;1260"
              dur="3s"
              repeatCount="indefinite"/>
 
@@ -479,7 +491,7 @@
 
 
 <!-- ================================================= -->
-<!-- TRANSFORMATION METHODS -->
+<!-- METHODS -->
 <!-- ================================================= -->
 
 <g font-family="monospace"
@@ -487,24 +499,24 @@
    fill="#67EFFF"
    opacity=".35">
 
-  <text x="95" y="410">
-    RAW
+  <text x="90" y="410">
+    RAW RANGE
   </text>
 
-  <text x="350" y="410">
-    LOG
+  <text x="400" y="410">
+    SCALE
   </text>
 
-  <text x="520" y="410">
-    SQRT
+  <text x="610" y="410">
+    MIN-MAX
   </text>
 
-  <text x="690" y="410">
-    RECIPROCAL
+  <text x="850" y="410">
+    STANDARDIZE
   </text>
 
-  <text x="930" y="410">
-    NORMALIZED
+  <text x="1160" y="410">
+    MODEL READY
   </text>
 
 </g>
@@ -519,19 +531,19 @@
       opacity=".25"/>
 
 
-<!-- Floating technical text -->
+<!-- Technical text -->
 
 <g font-family="monospace"
    font-size="13"
    fill="#65EFFF"
    opacity=".2">
 
-  <text x="1000" y="90">
-    FUNCTION TRANSFORMER • FEATURE ENGINEERING
+  <text x="1010" y="90">
+    MINMAXSCALER • STANDARDSCALER • ROBUSTSCALER
   </text>
 
-  <text x="1080" y="465">
-    RAW → TRANSFORM → MODEL READY
+  <text x="1100" y="465">
+    RAW FEATURES → SCALED FEATURES → MODEL READY
   </text>
 
 </g>
