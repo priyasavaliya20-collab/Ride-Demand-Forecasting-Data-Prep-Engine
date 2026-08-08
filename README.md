@@ -1,4 +1,4 @@
-
+<img width="1600" height="500" alt="pic" src="https://github.com/user-attachments/assets/a919afc7-495c-4e05-ad77-e432e91f2110" />
 <img width="1600" height="700" alt="download" src="https://github.com/user-attachments/assets/5401e11e-99ca-423a-a4a5-a7a6fa6e7a07" />
 
 
@@ -163,6 +163,12 @@ cleaned_data["sqrt_duration"] = np.sqrt(cleaned_data["duration_min"])
 
 ## ⚙️ Part 5: Feature Scaling
 
+
+<img width="1600" height="500" alt="pic" src="https://github.com/user-attachments/assets/bc717d24-d9cc-40b6-b8e0-bc2f2d505e82" />
+
+
+
+
 ```python
 scaling_cols = ["age","total_rides","cancelled_rides","avg_rating","distance_km",
                  "duration_min","fare_amount","population_density","traffic_index","avg_speed_kmph"]
@@ -175,7 +181,9 @@ minmax_scaled   = MinMaxScaler().fit_transform(cleaned_data[scaling_cols])     #
 
 ---
 
-## 🏗️ Part 6: Feature Construction
+## 🏗️ Part 6: Feature Construct
+
+<img width="1600" height="500" alt="pic" src="https://github.com/user-attachments/assets/c42bc621-6222-49e1-8590-9e10d78fb9c4" />
 
 ```python
 cleaned_data["avg_ride_distance"]      = total_distance / cleaned_data["total_rides"]
@@ -191,7 +199,17 @@ cleaned_data["surge_flag"]             = (cleaned_data["fare_per_km"] > 20).asty
 
 ---
 
-## ✅ Part 7: Final Dataset
+## ✅ Part 7: Final Dataset !
+
+<img width="1600" height="500" alt="pic" src="https://github.com/user-attachments/assets/500abe6a-f318-4009-91a9-fb38d56f29b0" />
+
+
+
+
+
+
+
+
 
 ```python
 final_data = cleaned_data.copy()
@@ -210,6 +228,14 @@ final_data.to_csv("final_prepared_rides_dataset.csv", index=False)
 ---
 
 ## 🎁 Part 8: Bonus — EDA Report & Visualizations
+
+
+
+<img width="1600" height="500" alt="pic" src="https://github.com/user-attachments/assets/f4f77619-bd88-40ae-a245-62f721d1c093" />
+
+
+
+
 
 ```python
 from ydata_profiling import ProfileReport
