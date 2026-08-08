@@ -1,4 +1,137 @@
-# 🚕 Ride Demand Forecasting Data Prep Engine
+```svg
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="180" viewBox="0 0 1200 180">
+  <defs>
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="50%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#A855F7"/>
+    </linearGradient>
+
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#A855F7" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <style>
+      .title {
+        font-family: Inter, Arial, sans-serif;
+        font-size: 42px;
+        font-weight: 750;
+        fill: url(#titleGrad);
+      }
+
+      .subtitle {
+        font-family: Inter, Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 3px;
+        fill: #64748B;
+      }
+
+      .pulse {
+        animation: pulse 2s ease-in-out infinite;
+        transform-origin: center;
+      }
+
+      .scan {
+        animation: scan 3s linear infinite;
+      }
+
+      .float {
+        animation: float 2.5s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%, 100% { opacity: .45; transform: scale(.9); }
+        50% { opacity: 1; transform: scale(1.15); }
+      }
+
+      @keyframes scan {
+        from { transform: translateX(-180px); }
+        to { transform: translateX(1180px); }
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="180" rx="18" fill="#F8FAFC"/>
+
+  <!-- Decorative grid -->
+  <g opacity=".35" stroke="#CBD5E1" stroke-width="1">
+    <path d="M40 35H1160"/>
+    <path d="M40 145H1160"/>
+    <path d="M160 25V155"/>
+    <path d="M1040 25V155"/>
+  </g>
+
+  <!-- Animated data flow -->
+  <g class="scan" filter="url(#glow)">
+    <circle cx="0" cy="112" r="4" fill="#38BDF8"/>
+    <circle cx="25" cy="105" r="3" fill="#6366F1"/>
+    <circle cx="50" cy="118" r="4" fill="#A855F7"/>
+  </g>
+
+  <!-- Forecast/data icon -->
+  <g class="float" transform="translate(62 48)">
+    <rect width="62" height="62" rx="16" fill="#EEF2FF"/>
+    <path
+      d="M14 43 L24 34 L33 39 L47 20"
+      fill="none"
+      stroke="url(#titleGrad)"
+      stroke-width="4"
+      stroke-linecap="round"
+      stroke-linejoin="round"/>
+    <circle class="pulse" cx="47" cy="20" r="5" fill="#6366F1"/>
+  </g>
+
+  <!-- Main title -->
+  <text x="150" y="82" class="title">
+    Ride Demand Forecasting
+  </text>
+
+  <!-- Subtitle -->
+  <text x="153" y="112" class="subtitle">
+    DATA PREP ENGINE
+  </text>
+
+  <!-- Live indicator -->
+  <g transform="translate(920 65)">
+    <circle class="pulse" cx="8" cy="8" r="8" fill="#22C55E" opacity=".25"/>
+    <circle cx="8" cy="8" r="4" fill="#22C55E"/>
+    <text x="24" y="13"
+          font-family="Inter, Arial, sans-serif"
+          font-size="12"
+          font-weight="700"
+          fill="#475569">
+      PIPELINE READY
+    </text>
+  </g>
+
+  <!-- Bottom animated line -->
+  <rect x="150" y="132" width="900" height="2" rx="1" fill="#E2E8F0"/>
+  <rect class="scan"
+        x="150" y="132"
+        width="180"
+        height="2"
+        rx="1"
+        fill="url(#lineGrad)"
+        filter="url(#glow)"/>
+</svg>
+```
 
 ## 🎯 Objective
 This project builds a complete, end-to-end **data preparation pipeline** for a ride-hailing dataset — combining multiple raw sources, cleaning them, treating outliers, engineering features, and scaling everything into a single ML-ready dataset for **ride demand forecasting**.
@@ -11,17 +144,18 @@ The dataset contains:
 - **Trip records** — fare, distance, duration, payment mode (`trips.json`)
 - **Zone info** — population density, traffic index, avg. speed (`city_zones.sql`)
 - **Target-relevant fields** — `surge_flag` for surge-pricing prediction
-
+  
 ## 📂 Project Files
 | 📄 File | 📌 Description |
 |---|---|
-| `riders.csv` | Raw rider-level demographic & signup data |
-| `trips.json` | Raw trip-level records |
-| `city_zones.sql` | SQLite script with zone-level reference data |
-| `main.ipynb` | Main notebook — loading, merging, cleaning, feature engineering |
-| `merged_rides_dataset.csv` | Checkpoint after merging all 3 sources |
-| `final_prepared_rides_dataset.csv` | Final ML-ready dataset |
-| `ride_demand_eda_report.html` | Auto-generated YData Profiling EDA report |
+| ` 🧑‍💻 riders.csv` | Raw rider-level demographic & signup data |
+| ` 🚕 trips.json` | Raw trip-level records |
+| ` 🗺️ city_zones.sql` | SQLite script with zone-level reference data |
+| ` 📓 main.ipynb` | Main notebook — loading, merging, cleaning, feature engineering |
+| ` 🔗 merged_rides_dataset.csv` | Checkpoint after merging all 3 sources |
+| ` 🤖 final_prepared_rides_dataset.csv` | Final ML-ready dataset |
+| ` 📊 ride_demand_eda_report.html` | Auto-generated YData Profiling EDA report |
+
 
 ## 🛠️ Tools Used
 `pandas` · `numpy` · `sqlite3` · `scikit-learn` (SimpleImputer, KNNImputer, StandardScaler, MinMaxScaler, LabelEncoder, OneHotEncoder) · `scipy` (zscore, winsorize) · `matplotlib` · `ydata-profiling`
