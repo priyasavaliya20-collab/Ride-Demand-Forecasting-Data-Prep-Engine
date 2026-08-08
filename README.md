@@ -1,4 +1,4 @@
-```svg
+
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="180" viewBox="0 0 1200 180">
   <defs>
     <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -7,13 +7,13 @@
       <stop offset="100%" stop-color="#A855F7"/>
     </linearGradient>
 
-    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+<linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#38BDF8" stop-opacity="0"/>
       <stop offset="50%" stop-color="#38BDF8"/>
       <stop offset="100%" stop-color="#A855F7" stop-opacity="0"/>
     </linearGradient>
 
-    <filter id="glow">
+  <filter id="glow">
       <feGaussianBlur stdDeviation="5" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
@@ -21,7 +21,7 @@
       </feMerge>
     </filter>
 
-    <style>
+  <style>
       .title {
         font-family: Inter, Arial, sans-serif;
         font-size: 42px;
@@ -67,7 +67,7 @@
     </style>
   </defs>
 
-  <!-- Background -->
+  
   <rect width="1200" height="180" rx="18" fill="#F8FAFC"/>
 
   <!-- Decorative grid -->
@@ -131,7 +131,7 @@
         fill="url(#lineGrad)"
         filter="url(#glow)"/>
 </svg>
-```
+
 
 ## 🎯 Objective
 This project builds a complete, end-to-end **data preparation pipeline** for a ride-hailing dataset — combining multiple raw sources, cleaning them, treating outliers, engineering features, and scaling everything into a single ML-ready dataset for **ride demand forecasting**.
