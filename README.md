@@ -107,6 +107,11 @@ cleaned_data = cleaned_data[~((cleaned_data["distance_km"] == 0) & (cleaned_data
 
 ## 📊 Part 3: Outlier Handling
 
+<img width="1600" height="500" alt="pic" src="https://github.com/user-attachments/assets/2cda04b0-8a75-48b6-970a-42e6cec7a0ee" />
+
+
+
+
 ```python
 # Z-score: fare & distance
 cleaned_data["fare_zscore"] = zscore(cleaned_data["fare_amount"])
