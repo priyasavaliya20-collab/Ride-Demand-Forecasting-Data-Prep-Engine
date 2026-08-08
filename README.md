@@ -134,6 +134,12 @@ cleaned_data["fare_amount"] = winsorize(cleaned_data["fare_amount"], limits=[0.0
 
 ## 🔧 Part 4: Data Transformation
 
+
+<img width="1600" height="500" alt="pic" src="https://github.com/user-attachments/assets/4d7ef5cf-5eae-44b8-8317-3b5c99996c31" />
+
+
+
+
 ```python
 # Datetime → features
 cleaned_data["hour"] = cleaned_data["ride_date"].dt.hour
