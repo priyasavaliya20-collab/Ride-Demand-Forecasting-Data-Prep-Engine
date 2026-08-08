@@ -44,7 +44,7 @@
 </defs>
 
 
-<!-- ================= BACKGROUND ================= -->
+
 
 <rect width="1600" height="700" fill="url(#bg)"/>
 
@@ -67,7 +67,7 @@
 </g>
 
 
-<!-- ================= GPS ROUTE ================= -->
+
 
 <path d="M80 170
          C230 80 370 230 520 145
@@ -94,7 +94,7 @@
 </circle>
 
 
-<!-- ================= MAIN RIDE VISUAL ================= -->
+
 
 <g transform="translate(80 270)" filter="url(#glow)">
 
@@ -112,10 +112,9 @@
         opacity=".35"/>
 
 
-  <!-- CAR -->
   <g>
 
-    <!-- Car body -->
+   
   <path d="
       M55 135
       L88 82
@@ -134,7 +133,7 @@
       stroke-width="4"/>
 
 
-    <!-- Roof -->
+  
   <path d="
       M98 80
       Q108 60 130 60
@@ -145,7 +144,6 @@
       stroke-width="3"/>
 
 
-    <!-- Windows -->
   <path d="
       M113 75
       L135 75
@@ -169,14 +167,14 @@
       stroke-width="2"/>
 
 
-    <!-- Door lines -->
+  
   <path d="M205 75 V160"
           stroke="#65EFFF"
           stroke-width="2"
           opacity=".5"/>
 
 
-    <!-- Door handle -->
+   
   <rect x="265" y="128"
           width="24"
           height="4"
@@ -184,7 +182,6 @@
           fill="#B8FAFF"/>
 
 
-    <!-- Front light -->
   <ellipse cx="398" cy="143"
              rx="9"
              ry="6"
@@ -198,14 +195,14 @@
   </ellipse>
 
 
-    <!-- Back light -->
+  
   <ellipse cx="34" cy="143"
              rx="8"
              ry="6"
              fill="#FF6070"/>
 
 
-    <!-- Wheels -->
+
   <g>
       <circle cx="105" cy="166"
               r="28"
@@ -228,7 +225,7 @@
               fill="#62EFFF"/>
     </g>
 
-    <!-- Car movement -->
+   
   <animateTransform
       attributeName="transform"
       type="translate"
@@ -239,7 +236,7 @@
   </g>
 
 
-  <!-- GPS PIN -->
+
 
   <g transform="translate(385 15)">
 
@@ -263,7 +260,7 @@
 </g>
 
 
-<!-- ================= HUGE RIDE TEXT ================= -->
+
 
 <text x="290"
       y="520"
@@ -289,7 +286,7 @@
 </text>
 
 
-<!-- ================= MAIN TITLE ================= -->
+
 
 <g text-anchor="middle">
 
@@ -325,7 +322,7 @@
     DATA PREP ENGINE
   </text>
 
-  <!-- Animated underline -->
+
   <rect x="700"
         y="458"
         width="500"
@@ -348,7 +345,7 @@
 </g>
 
 
-<!-- ================= FORECAST GRAPH ================= -->
+
 
 <g>
 
@@ -391,7 +388,7 @@
   </path>
 
 
-  <!-- Forecast points -->
+
 
   <g fill="#FFFFFF"
      stroke="#65EEFF"
@@ -437,7 +434,7 @@
 </g>
 
 
-<!-- ================= DATA PREP LABELS ================= -->
+
 
 <g font-family="Arial"
    font-size="13"
@@ -454,7 +451,6 @@
 </g>
 
 
-<!-- ================= FLOATING DATA ================= -->
 
 <g font-family="monospace"
    font-size="15"
@@ -469,7 +465,7 @@
 </g>
 
 
-<!-- ================= MOVING SHINE ================= -->
+
 
 <rect x="-300"
       y="50"
