@@ -1,136 +1,5 @@
 
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="180" viewBox="0 0 1200 180">
-  <defs>
-    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38BDF8"/>
-      <stop offset="50%" stop-color="#6366F1"/>
-      <stop offset="100%" stop-color="#A855F7"/>
-    </linearGradient>
 
-<linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#38BDF8"/>
-      <stop offset="100%" stop-color="#A855F7" stop-opacity="0"/>
-    </linearGradient>
-
-  <filter id="glow">
-      <feGaussianBlur stdDeviation="5" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-
-  <style>
-      .title {
-        font-family: Inter, Arial, sans-serif;
-        font-size: 42px;
-        font-weight: 750;
-        fill: url(#titleGrad);
-      }
-
-      .subtitle {
-        font-family: Inter, Arial, sans-serif;
-        font-size: 14px;
-        font-weight: 600;
-        letter-spacing: 3px;
-        fill: #64748B;
-      }
-
-      .pulse {
-        animation: pulse 2s ease-in-out infinite;
-        transform-origin: center;
-      }
-
-      .scan {
-        animation: scan 3s linear infinite;
-      }
-
-      .float {
-        animation: float 2.5s ease-in-out infinite;
-      }
-
-      @keyframes pulse {
-        0%, 100% { opacity: .45; transform: scale(.9); }
-        50% { opacity: 1; transform: scale(1.15); }
-      }
-
-      @keyframes scan {
-        from { transform: translateX(-180px); }
-        to { transform: translateX(1180px); }
-      }
-
-      @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-5px); }
-      }
-    </style>
-  </defs>
-
-  
-  <rect width="1200" height="180" rx="18" fill="#F8FAFC"/>
-
-  <!-- Decorative grid -->
-  <g opacity=".35" stroke="#CBD5E1" stroke-width="1">
-    <path d="M40 35H1160"/>
-    <path d="M40 145H1160"/>
-    <path d="M160 25V155"/>
-    <path d="M1040 25V155"/>
-  </g>
-
-  <!-- Animated data flow -->
-  <g class="scan" filter="url(#glow)">
-    <circle cx="0" cy="112" r="4" fill="#38BDF8"/>
-    <circle cx="25" cy="105" r="3" fill="#6366F1"/>
-    <circle cx="50" cy="118" r="4" fill="#A855F7"/>
-  </g>
-
-  <!-- Forecast/data icon -->
-  <g class="float" transform="translate(62 48)">
-    <rect width="62" height="62" rx="16" fill="#EEF2FF"/>
-    <path
-      d="M14 43 L24 34 L33 39 L47 20"
-      fill="none"
-      stroke="url(#titleGrad)"
-      stroke-width="4"
-      stroke-linecap="round"
-      stroke-linejoin="round"/>
-    <circle class="pulse" cx="47" cy="20" r="5" fill="#6366F1"/>
-  </g>
-
-  <!-- Main title -->
-  <text x="150" y="82" class="title">
-    Ride Demand Forecasting
-  </text>
-
-  <!-- Subtitle -->
-  <text x="153" y="112" class="subtitle">
-    DATA PREP ENGINE
-  </text>
-
-  <!-- Live indicator -->
-  <g transform="translate(920 65)">
-    <circle class="pulse" cx="8" cy="8" r="8" fill="#22C55E" opacity=".25"/>
-    <circle cx="8" cy="8" r="4" fill="#22C55E"/>
-    <text x="24" y="13"
-          font-family="Inter, Arial, sans-serif"
-          font-size="12"
-          font-weight="700"
-          fill="#475569">
-      PIPELINE READY
-    </text>
-  </g>
-
-  <!-- Bottom animated line -->
-  <rect x="150" y="132" width="900" height="2" rx="1" fill="#E2E8F0"/>
-  <rect class="scan"
-        x="150" y="132"
-        width="180"
-        height="2"
-        rx="1"
-        fill="url(#lineGrad)"
-        filter="url(#glow)"/>
-</svg>
 
 
 ## 🎯 Objective
@@ -157,8 +26,18 @@ The dataset contains:
 | ` 📊 ride_demand_eda_report.html` | Auto-generated YData Profiling EDA report |
 
 
+
 ## 🛠️ Tools Used
-`pandas` · `numpy` · `sqlite3` · `scikit-learn` (SimpleImputer, KNNImputer, StandardScaler, MinMaxScaler, LabelEncoder, OneHotEncoder) · `scipy` (zscore, winsorize) · `matplotlib` · `ydata-profiling`
+
+![Pandas](https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/numpy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![SQLite](https://img.shields.io/badge/sqlite3-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
+![SciPy](https://img.shields.io/badge/scipy-8CAAE6?style=for-the-badge&logo=scipy&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/matplotlib-11557C?style=for-the-badge&logo=plotly&logoColor=white)
+![ydata-profiling](https://img.shields.io/badge/ydata--profiling-4B8BBE?style=for-the-badge&logo=databricks&logoColor=white)
+
+**Key modules used:** `SimpleImputer` · `KNNImputer` · `StandardScaler` · `MinMaxScaler` · `LabelEncoder` · `OneHotEncoder` (scikit-learn) &nbsp;|&nbsp; `zscore`, `winsorize` (scipy)
 
 ## 🧬 Dataset Structure
 
