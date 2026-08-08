@@ -12,16 +12,22 @@
       <stop offset="100%" stop-color="#020B1C"/>
     </linearGradient>
 
-    <!-- Main Text -->
+    <!-- Title -->
     <linearGradient id="title" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#FFFFFF"/>
       <stop offset="45%" stop-color="#5DEAFF"/>
       <stop offset="100%" stop-color="#829CFF"/>
     </linearGradient>
 
+    <!-- Accent -->
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4DE6FF"/>
+      <stop offset="100%" stop-color="#FFB84D"/>
+    </linearGradient>
+
     <!-- Glow -->
     <filter id="glow">
-      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feGaussianBlur stdDeviation="6" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
@@ -29,13 +35,15 @@
     </filter>
 
     <filter id="softGlow">
-      <feGaussianBlur stdDeviation="15"/>
+      <feGaussianBlur stdDeviation="12"/>
     </filter>
 
   </defs>
 
 
-  <!-- ================= BACKGROUND ================= -->
+  <!-- ================================================= -->
+  <!-- BACKGROUND -->
+  <!-- ================================================= -->
 
   <rect width="1600"
         height="500"
@@ -64,22 +72,25 @@
   </g>
 
 
-  <!-- ================= DATA FLOW ================= -->
+  <!-- ================================================= -->
+  <!-- TOP DATA NETWORK -->
+  <!-- ================================================= -->
 
   <g fill="none"
      stroke="#58E9FF"
-     stroke-width="2"
-     opacity=".35">
+     opacity=".3">
 
-    <path d="M120 130
-             C300 50 430 200 600 120
-             S900 70 1080 140
-             S1330 70 1500 130"/>
+    <path d="M70 120
+             C270 40 430 180 610 105
+             S900 60 1080 125
+             S1320 55 1530 135"
+          stroke-width="2"/>
 
-    <path d="M100 150
-             C300 70 450 220 620 140
-             S920 90 1090 160
-             S1340 90 1510 150"/>
+    <path d="M70 145
+             C270 65 440 205 620 130
+             S920 85 1090 150
+             S1330 80 1530 160"
+          stroke-width="1"/>
 
   </g>
 
@@ -94,7 +105,7 @@
       <animateMotion
         dur="5s"
         repeatCount="indefinite"
-        path="M120 130 C300 50 430 200 600 120 S900 70 1080 140 S1330 70 1500 130"/>
+        path="M70 120 C270 40 430 180 610 105 S900 60 1080 125 S1320 55 1530 135"/>
 
     </circle>
 
@@ -103,62 +114,75 @@
       <animateMotion
         dur="4s"
         repeatCount="indefinite"
-        path="M100 150 C300 70 450 220 620 140 S920 90 1090 160 S1340 90 1510 150"/>
+        path="M70 145 C270 65 440 205 620 130 S920 85 1090 150 S1330 80 1530 160"/>
 
     </circle>
 
   </g>
 
 
-  <!-- ================= DATABASE ICON ================= -->
+  <!-- ================================================= -->
+  <!-- DATABASE -->
+  <!-- ================================================= -->
 
-  <g transform="translate(150 205)"
+  <g transform="translate(130 190)"
      filter="url(#glow)">
 
-    <!-- Database -->
+    <!-- Database body -->
 
-    <ellipse cx="80"
-             cy="20"
-             rx="70"
-             ry="25"
-             fill="#0A78A9"
-             stroke="#6CEFFF"
-             stroke-width="3"/>
-
-    <path d="M10 20V120
-             C10 135 150 135 150 120
-             V20"
+    <path d="M0 35
+             V125
+             C0 145 150 145 150 125
+             V35"
           fill="#07527E"
           stroke="#6CEFFF"
           stroke-width="3"/>
 
-    <ellipse cx="80"
-             cy="55"
-             rx="70"
+
+    <!-- Top -->
+
+    <ellipse cx="75"
+             cy="35"
+             rx="75"
+             ry="27"
+             fill="#0B7BAA"
+             stroke="#6CEFFF"
+             stroke-width="3"/>
+
+
+    <!-- Middle -->
+
+    <ellipse cx="75"
+             cy="68"
+             rx="75"
              ry="25"
              fill="none"
              stroke="#63EFFF"
              stroke-width="2"
              opacity=".6"/>
 
-    <ellipse cx="80"
-             cy="90"
-             rx="70"
+
+    <!-- Lower -->
+
+    <ellipse cx="75"
+             cy="100"
+             rx="75"
              ry="25"
              fill="none"
              stroke="#63EFFF"
              stroke-width="2"
              opacity=".6"/>
+
 
     <!-- Data pulse -->
 
-    <circle cx="80"
-            cy="20"
+    <circle cx="75"
+            cy="35"
             r="8"
             fill="#FFFFFF">
 
       <animate attributeName="r"
-               values="6;13;6"
+               values="6;14;6"
                dur="1.5s"
                repeatCount="indefinite"/>
 
@@ -172,7 +196,25 @@
   </g>
 
 
-  <!-- ================= MERGE ARROWS ================= -->
+  <!-- Database Label -->
+
+  <text x="205"
+        y="360"
+        text-anchor="middle"
+        font-family="Arial"
+        font-size="14"
+        font-weight="600"
+        letter-spacing="3"
+        fill="#8FEAF5">
+
+    DATA SOURCES
+
+  </text>
+
+
+  <!-- ================================================= -->
+  <!-- DATA FLOW -->
+  <!-- ================================================= -->
 
   <g fill="none"
      stroke="#5DEAFF"
@@ -180,59 +222,81 @@
      stroke-linecap="round"
      filter="url(#glow)">
 
-    <path d="M340 270
-             C410 270 430 230 500 230"/>
+    <path d="M300 235
+             C390 235 420 190 510 190"/>
 
-    <path d="M340 320
-             C410 320 430 360 500 360"/>
+    <path d="M300 290
+             C390 290 420 335 510 335"/>
 
-    <path d="M500 230
-             C560 230 570 275 620 275"/>
+    <path d="M510 190
+             C560 190 575 235 625 250"/>
 
-    <path d="M500 360
-             C560 360 570 315 620 315"/>
-
-  </g>
-
-
-  <!-- Arrow Heads -->
-
-  <g fill="#5DEAFF">
-
-    <path d="M615 265 L635 275 L615 285Z"/>
-    <path d="M615 305 L635 315 L615 325Z"/>
+    <path d="M510 335
+             C560 335 575 295 625 275"/>
 
   </g>
 
 
-  <!-- ================= MERGED DATA ICON ================= -->
+  <!-- Moving particles -->
 
-  <g transform="translate(640 245)"
+  <circle r="6"
+          fill="#FFFFFF"
+          filter="url(#glow)">
+
+    <animateMotion
+      dur="2.5s"
+      repeatCount="indefinite"
+      path="M300 235 C390 235 420 190 510 190 C560 190 575 235 625 250"/>
+
+  </circle>
+
+
+  <circle r="6"
+          fill="#FFB84D"
+          filter="url(#glow)">
+
+    <animateMotion
+      dur="2.8s"
+      repeatCount="indefinite"
+      path="M300 290 C390 290 420 335 510 335 C560 335 575 295 625 275"/>
+
+  </circle>
+
+
+  <!-- ================================================= -->
+  <!-- MERGED DATA -->
+  <!-- ================================================= -->
+
+  <g transform="translate(625 220)"
      filter="url(#glow)">
 
     <rect x="0"
           y="0"
           width="90"
           height="90"
-          rx="18"
+          rx="20"
           fill="#0B638F"
           stroke="#6CEFFF"
           stroke-width="3"/>
 
-    <path d="M22 28H68
-             M22 45H68
-             M22 62H55"
+
+    <!-- File/Data Symbol -->
+
+    <path d="M25 28H65
+             M25 45H65
+             M25 62H52"
           stroke="#FFFFFF"
           stroke-width="5"
           stroke-linecap="round"/>
 
-    <circle cx="70"
+
+    <circle cx="67"
             cy="62"
             r="7"
             fill="#FFB84D">
 
       <animate attributeName="r"
-               values="5;9;5"
+               values="5;10;5"
                dur="1.2s"
                repeatCount="indefinite"/>
 
@@ -241,102 +305,131 @@
   </g>
 
 
-  <!-- ================= MAIN TITLE ================= -->
+  <!-- ================================================= -->
+  <!-- MAIN TITLE -->
+  <!-- ================================================= -->
 
-  <text x="1120"
-        y="260"
-        text-anchor="middle"
-        font-family="Arial, Helvetica, sans-serif"
-        font-size="56"
-        font-weight="900"
-        letter-spacing="1"
-        fill="url(#title)"
-        filter="url(#glow)">
+  <g text-anchor="middle">
 
-    Part 1: Data Loading
+    <text x="1080"
+          y="250"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="62"
+          font-weight="900"
+          letter-spacing="1"
+          fill="url(#title)"
+          filter="url(#glow)">
 
-  </text>
+      Data Loading
 
-
-  <text x="1120"
-        y="330"
-        text-anchor="middle"
-        font-family="Arial, Helvetica, sans-serif"
-        font-size="56"
-        font-weight="900"
-        letter-spacing="1"
-        fill="url(#title)"
-        filter="url(#glow)">
-
-    &amp; Merging
-
-  </text>
+    </text>
 
 
-  <!-- ================= SUBTITLE ================= -->
+    <text x="1080"
+          y="325"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="62"
+          font-weight="900"
+          letter-spacing="1"
+          fill="url(#title)"
+          filter="url(#glow)">
 
-  <text x="1120"
-        y="375"
-        text-anchor="middle"
-        font-family="Arial, Helvetica, sans-serif"
-        font-size="17"
-        letter-spacing="5"
-        fill="#8FEAF5">
+      &amp; Merging
 
-    LOAD • COMBINE • INTEGRATE
-
-  </text>
-
-
-  <!-- Animated Underline -->
-
-  <rect x="850"
-        y="395"
-        width="540"
-        height="3"
-        rx="2"
-        fill="#5DEAFF">
-
-    <animate attributeName="width"
-             values="80;540;80"
-             dur="3s"
-             repeatCount="indefinite"/>
-
-    <animate attributeName="x"
-             values="1120;850;1120"
-             dur="3s"
-             repeatCount="indefinite"/>
-
-  </rect>
+    </text>
 
 
-  <!-- ================= FLOATING DATA ================= -->
+    <!-- Subtitle -->
+
+    <text x="1080"
+          y="370"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="17"
+          font-weight="600"
+          letter-spacing="5"
+          fill="#8FEAF5">
+
+      LOAD • COMBINE • INTEGRATE
+
+    </text>
+
+
+    <!-- Animated underline -->
+
+    <rect x="820"
+          y="392"
+          width="520"
+          height="3"
+          rx="2"
+          fill="url(#accent)">
+
+      <animate attributeName="width"
+               values="70;520;70"
+               dur="3s"
+               repeatCount="indefinite"/>
+
+      <animate attributeName="x"
+               values="1080;820;1080"
+               dur="3s"
+               repeatCount="indefinite"/>
+
+    </rect>
+
+  </g>
+
+
+  <!-- ================================================= -->
+  <!-- SOURCE LABELS -->
+  <!-- ================================================= -->
 
   <g font-family="monospace"
      font-size="14"
-     fill="#65EFFF"
-     opacity=".25">
+     fill="#66EFFF"
+     opacity=".3">
 
-    <text x="100" y="440">
-      CSV → JSON → SQL → API
+    <text x="80" y="430">
+      CSV
     </text>
 
-    <text x="1120" y="440"
-          text-anchor="middle">
-      DATA SOURCES → MERGED DATASET
+    <text x="180" y="430">
+      JSON
+    </text>
+
+    <text x="280" y="430">
+      SQL
+    </text>
+
+    <text x="380" y="430">
+      API
+    </text>
+
+    <text x="720" y="430">
+      MERGED DATASET
     </text>
 
   </g>
 
 
-  <!-- ================= MOVING SHINE ================= -->
+  <!-- ================================================= -->
+  <!-- BOTTOM DATA FLOW -->
+  <!-- ================================================= -->
 
-  <rect x="-200"
+  <path d="M80 450
+           H1520"
+        stroke="#5DEAFF"
+        stroke-width="1"
+        stroke-dasharray="5 12"
+        opacity=".25"/>
+
+
+  <!-- Moving Shine -->
+
+  <rect x="-250"
         y="0"
         width="100"
         height="500"
-        fill="#FFFFFF"
-        opacity=".06">
+        fill="url(#accent)"
+        opacity=".08">
 
     <animateTransform
       attributeName="transform"
@@ -346,5 +439,23 @@
       repeatCount="indefinite"/>
 
   </rect>
+
+
+  <!-- Floating Data -->
+
+  <g font-family="monospace"
+     font-size="13"
+     fill="#65EFFF"
+     opacity=".2">
+
+    <text x="1050" y="80">
+      101001 • 010101 • 110010
+    </text>
+
+    <text x="1180" y="460">
+      DATA → MERGE → READY
+    </text>
+
+  </g>
 
 </svg>
