@@ -5,25 +5,22 @@
 
 <defs>
 
-  <!-- Background -->
   <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
     <stop offset="0%" stop-color="#04152F"/>
     <stop offset="50%" stop-color="#075078"/>
     <stop offset="100%" stop-color="#020A1A"/>
   </linearGradient>
 
-  <!-- Title -->
   <linearGradient id="title" x1="0" y1="0" x2="1" y2="0">
     <stop offset="0%" stop-color="#FFFFFF"/>
     <stop offset="45%" stop-color="#5DEAFF"/>
     <stop offset="100%" stop-color="#8CA5FF"/>
   </linearGradient>
 
-  <!-- Scale -->
-  <linearGradient id="scale" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0%" stop-color="#6AF3FF"/>
-    <stop offset="50%" stop-color="#168FC4"/>
-    <stop offset="100%" stop-color="#6C63FF"/>
+  <linearGradient id="feature" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#64F2FF"/>
+    <stop offset="50%" stop-color="#178FC5"/>
+    <stop offset="100%" stop-color="#725CFF"/>
   </linearGradient>
 
   <filter id="glow">
@@ -34,20 +31,10 @@
     </feMerge>
   </filter>
 
-  <filter id="bigGlow">
-    <feGaussianBlur stdDeviation="12" result="blur"/>
-    <feMerge>
-      <feMergeNode in="blur"/>
-      <feMergeNode in="SourceGraphic"/>
-    </feMerge>
-  </filter>
-
 </defs>
 
 
-<!-- ================================================= -->
 <!-- BACKGROUND -->
-<!-- ================================================= -->
 
 <rect width="1600"
       height="500"
@@ -55,7 +42,7 @@
       fill="url(#bg)"/>
 
 
-<!-- Grid -->
+<!-- GRID -->
 
 <g stroke="#61EFFF" opacity=".07">
 
@@ -75,9 +62,7 @@
 </g>
 
 
-<!-- ================================================= -->
-<!-- TOP DATA NETWORK -->
-<!-- ================================================= -->
+<!-- TOP DATA FLOW -->
 
 <path d="M70 120
          C270 40 430 180 610 105
@@ -88,212 +73,175 @@
       stroke-width="2"
       opacity=".3"/>
 
-<g fill="#64F1FF" filter="url(#glow)">
+<circle r="6"
+        fill="#64F1FF"
+        filter="url(#glow)">
 
-  <circle r="6">
+  <animateMotion
+    dur="5s"
+    repeatCount="indefinite"
+    path="M70 120 C270 40 430 180 610 105 S900 60 1080 125 S1330 55 1530 135"/>
 
-    <animateMotion
-      dur="5s"
-      repeatCount="indefinite"
-      path="M70 120 C270 40 430 180 610 105 S900 60 1080 125 S1330 55 1530 135"/>
+</circle>
 
-  </circle>
+
+<!-- RAW FEATURES -->
+
+<g transform="translate(70 175)"
+   filter="url(#glow)">
+
+  <rect x="0"
+        y="0"
+        width="210"
+        height="145"
+        rx="20"
+        fill="#092D4D"
+        stroke="#5DEAFF"
+        stroke-width="3"/>
+
+  <rect x="25" y="25"
+        width="70"
+        height="38"
+        rx="8"
+        fill="#0A668D"/>
+
+  <text x="60" y="50"
+        text-anchor="middle"
+        font-family="monospace"
+        font-size="13"
+        fill="#FFFFFF">
+    AGE
+  </text>
+
+  <rect x="115" y="25"
+        width="70"
+        height="38"
+        rx="8"
+        fill="#0A668D"/>
+
+  <text x="150" y="50"
+        text-anchor="middle"
+        font-family="monospace"
+        font-size="13"
+        fill="#FFFFFF">
+    INCOME
+  </text>
+
+  <rect x="25" y="82"
+        width="70"
+        height="38"
+        rx="8"
+        fill="#0A668D"/>
+
+  <text x="60" y="107"
+        text-anchor="middle"
+        font-family="monospace"
+        font-size="12"
+        fill="#FFFFFF">
+    SALES
+  </text>
+
+  <rect x="115" y="82"
+        width="70"
+        height="38"
+        rx="8"
+        fill="#0A668D"/>
+
+  <text x="150" y="107"
+        text-anchor="middle"
+        font-family="monospace"
+        font-size="12"
+        fill="#FFFFFF">
+    VISITS
+  </text>
 
 </g>
 
 
-<!-- ================================================= -->
-<!-- BEFORE SCALING -->
-<!-- ================================================= -->
-
-<g transform="translate(80 185)">
-
-  <!-- Axis -->
-
-  <line x1="25" y1="135"
-        x2="270" y2="135"
-        stroke="#5DEAFF"
-        stroke-width="2"
-        opacity=".35"/>
-
-  <line x1="25" y1="150"
-        x2="25" y2="15"
-        stroke="#5DEAFF"
-        stroke-width="2"
-        opacity=".35"/>
-
-
-  <!-- Unequal features -->
-
-  <rect x="55" y="105"
-        width="18"
-        height="30"
-        rx="3"
-        fill="#55DCEF"/>
-
-  <rect x="90" y="65"
-        width="18"
-        height="70"
-        rx="3"
-        fill="#55DCEF"/>
-
-  <rect x="125" y="20"
-        width="18"
-        height="115"
-        rx="3"
-        fill="#55DCEF"/>
-
-  <rect x="160" y="88"
-        width="18"
-        height="47"
-        rx="3"
-        fill="#55DCEF"/>
-
-  <rect x="195" y="45"
-        width="18"
-        height="90"
-        rx="3"
-        fill="#55DCEF"/>
-
-
-  <!-- Highlight wide range -->
-
-  <path d="M125 18
-           L125 5
-           L220 5"
-        fill="none"
-        stroke="#FFB84D"
-        stroke-width="2"
-        stroke-dasharray="5 5"/>
-
-</g>
-
-
-<text x="210"
-      y="350"
+<text x="175"
+      y="355"
       text-anchor="middle"
       font-family="Arial"
       font-size="14"
       font-weight="600"
       letter-spacing="3"
-      fill="#FFB84D">
+      fill="#8FEAF5">
 
-  BEFORE SCALING
+  RAW FEATURES
 
 </text>
 
 
-<!-- ================================================= -->
-<!-- SCALE ARROWS -->
-<!-- ================================================= -->
+<!-- FLOW -->
 
-<g stroke="#5DEAFF"
-   stroke-width="4"
-   fill="none"
-   stroke-linecap="round"
-   filter="url(#glow)">
+<g fill="none"
+   stroke="#5DEAFF"
+   stroke-width="3"
+   stroke-linecap="round">
 
-  <path d="M330 250
-           C380 250 400 250 445 250"/>
+  <path d="M295 210
+           C350 210 365 230 405 230"/>
 
-  <path d="M680 250
-           C730 250 750 250 800 250"/>
+  <path d="M295 280
+           C350 280 365 260 405 260"/>
 
 </g>
 
 
-<!-- Arrow heads -->
-
-<path d="M435 238
-         L455 250
-         L435 262Z"
-      fill="#5DEAFF"/>
-
-<path d="M790 238
-         L810 250
-         L790 262Z"
-      fill="#5DEAFF"/>
-
-
-<!-- Moving particles -->
-
-<circle r="6"
+<circle r="5"
         fill="#FFFFFF"
         filter="url(#glow)">
 
   <animateMotion
-    dur="1.8s"
+    dur="2s"
     repeatCount="indefinite"
-    path="M330 250 C380 250 400 250 445 250"/>
+    path="M295 210 C350 210 365 230 405 230"/>
 
 </circle>
 
 
-<!-- ================================================= -->
-<!-- SCALING ENGINE -->
-<!-- ================================================= -->
+<!-- CONSTRUCTION ENGINE -->
 
-<g transform="translate(455 175)"
-   filter="url(#bigGlow)">
+<g transform="translate(400 170)"
+   filter="url(#glow)">
 
-  <!-- Outer ring -->
-
-  <circle cx="90"
-          cy="75"
+  <circle cx="80"
+          cy="80"
           r="70"
           fill="#073A59"
           stroke="#5DEAFF"
           stroke-width="3"
-          stroke-dasharray="12 8">
+          stroke-dasharray="12 9">
 
     <animateTransform
       attributeName="transform"
       type="rotate"
-      from="0 90 75"
-      to="360 90 75"
-      dur="6s"
+      from="0 80 80"
+      to="360 80 80"
+      dur="7s"
       repeatCount="indefinite"/>
 
   </circle>
 
+  <polygon points="80,38 116,58 116,100 80,122 44,100 44,58"
+           fill="url(#feature)"
+           stroke="#B9FAFF"
+           stroke-width="3"/>
 
-  <!-- Ruler -->
+  <path d="M80 62V98
+           M62 80H98"
+        stroke="#FFFFFF"
+        stroke-width="6"
+        stroke-linecap="round"/>
 
-  <rect x="35"
-        y="48"
-        width="110"
-        height="55"
-        rx="10"
-        fill="url(#scale)"
-        stroke="#B8F9FF"
-        stroke-width="2"/>
-
-
-  <!-- Scale marks -->
-
-  <g stroke="#FFFFFF"
-     stroke-width="3">
-
-    <path d="M50 65V85"/>
-    <path d="M68 58V92"/>
-    <path d="M86 65V85"/>
-    <path d="M104 58V92"/>
-    <path d="M122 65V85"/>
-    <path d="M140 58V92"/>
-
-  </g>
-
-
-  <!-- Center pulse -->
-
-  <circle cx="90"
-          cy="75"
+  <circle cx="80"
+          cy="80"
           r="8"
           fill="#FFFFFF">
 
     <animate attributeName="r"
-             values="7;15;7"
-             dur="1.4s"
+             values="8;17;8"
+             dur="1.5s"
              repeatCount="indefinite"/>
 
   </circle>
@@ -301,8 +249,8 @@
 </g>
 
 
-<text x="545"
-      y="350"
+<text x="480"
+      y="355"
       text-anchor="middle"
       font-family="Arial"
       font-size="14"
@@ -310,117 +258,106 @@
       letter-spacing="3"
       fill="#5DEAFF">
 
-  SCALE FEATURES
+  CONSTRUCT
 
 </text>
 
 
-<!-- ================================================= -->
-<!-- AFTER SCALING -->
-<!-- ================================================= -->
+<!-- FORMULA -->
 
-<g transform="translate(820 185)">
+<g transform="translate(570 205)"
+   filter="url(#glow)">
 
-  <!-- Axis -->
+  <rect x="0"
+        y="0"
+        width="205"
+        height="95"
+        rx="18"
+        fill="#082F4B"
+        stroke="#6AEBFF"
+        stroke-width="2"/>
 
-  <line x1="25" y1="135"
-        x2="270" y2="135"
-        stroke="#5DEAFF"
-        stroke-width="2"
-        opacity=".35"/>
+  <text x="102"
+        y="40"
+        text-anchor="middle"
+        font-family="monospace"
+        font-size="17"
+        font-weight="700"
+        fill="#FFFFFF">
 
-  <line x1="25" y1="150"
-        x2="25" y2="15"
-        stroke="#5DEAFF"
-        stroke-width="2"
-        opacity=".35"/>
+    AGE × INCOME
 
+  </text>
 
-  <!-- Equal-scale bars -->
+  <text x="102"
+        y="70"
+        text-anchor="middle"
+        font-family="monospace"
+        font-size="14"
+        fill="#4CFFB3">
 
-  <g fill="#4CFFB3">
+    = NEW FEATURE
 
-    <rect x="55" y="72"
-          width="18"
-          height="63"
-          rx="3">
-
-      <animate attributeName="height"
-               values="63;55;63"
-               dur="1.5s"
-               repeatCount="indefinite"/>
-
-    </rect>
-
-    <rect x="95" y="55"
-          width="18"
-          height="80"
-          rx="3">
-
-      <animate attributeName="height"
-               values="80;70;80"
-               dur="1.7s"
-               repeatCount="indefinite"/>
-
-    </rect>
-
-    <rect x="135" y="65"
-          width="18"
-          height="70"
-          rx="3">
-
-      <animate attributeName="height"
-               values="70;78;70"
-               dur="1.6s"
-               repeatCount="indefinite"/>
-
-    </rect>
-
-    <rect x="175" y="75"
-          width="18"
-          height="60"
-          rx="3">
-
-      <animate attributeName="height"
-               values="60;68;60"
-               dur="1.8s"
-               repeatCount="indefinite"/>
-
-    </rect>
-
-    <rect x="215" y="60"
-          width="18"
-          height="75"
-          rx="3">
-
-      <animate attributeName="height"
-               values="75;65;75"
-               dur="1.4s"
-               repeatCount="indefinite"/>
-
-    </rect>
-
-  </g>
-
-
-  <!-- Normalized range -->
-
-  <rect x="45"
-        y="25"
-        width="210"
-        height="105"
-        rx="8"
-        fill="none"
-        stroke="#4CFFB3"
-        stroke-width="1"
-        stroke-dasharray="5 6"
-        opacity=".4"/>
+  </text>
 
 </g>
 
 
-<text x="955"
-      y="350"
+<!-- OUTPUT FEATURES -->
+
+<g transform="translate(825 175)"
+   filter="url(#glow)">
+
+  <rect x="0"
+        y="0"
+        width="225"
+        height="145"
+        rx="20"
+        fill="#063C56"
+        stroke="#4CFFB3"
+        stroke-width="3"/>
+
+  <rect x="22"
+        y="22"
+        width="181"
+        height="38"
+        rx="8"
+        fill="#075A60"/>
+
+  <text x="112"
+        y="47"
+        text-anchor="middle"
+        font-family="monospace"
+        font-size="12"
+        fill="#4CFFB3">
+
+    AGE_INCOME_RATIO
+
+  </text>
+
+  <rect x="22"
+        y="75"
+        width="181"
+        height="38"
+        rx="8"
+        fill="#075A60"/>
+
+  <text x="112"
+        y="100"
+        text-anchor="middle"
+        font-family="monospace"
+        font-size="12"
+        fill="#4CFFB3">
+
+    SALES_PER_VISIT
+
+  </text>
+
+</g>
+
+
+<text x="937"
+      y="355"
       text-anchor="middle"
       font-family="Arial"
       font-size="14"
@@ -428,60 +365,58 @@
       letter-spacing="3"
       fill="#4CFFB3">
 
-  SCALED FEATURES
+  NEW FEATURES
 
 </text>
 
 
 <!-- ================================================= -->
-<!-- MAIN TITLE -->
+<!-- MAIN TITLE - FIXED -->
 <!-- ================================================= -->
 
 <g text-anchor="middle">
 
-  <text x="1260"
-        y="250"
+  <text x="1280"
+        y="235"
         font-family="Arial, Helvetica, sans-serif"
-        font-size="66"
+        font-size="54"
         font-weight="900"
-        letter-spacing="2"
+        letter-spacing="1"
         fill="url(#title)"
         filter="url(#glow)">
 
-    Feature Scaling
+    Feature Construction
 
   </text>
 
 
-  <text x="1260"
-        y="305"
+  <text x="1280"
+        y="285"
         font-family="Arial, Helvetica, sans-serif"
-        font-size="17"
+        font-size="16"
         font-weight="600"
-        letter-spacing="5"
+        letter-spacing="4"
         fill="#91EAF5">
 
-    STANDARDIZE • NORMALIZE • BALANCE
+    COMBINE • DERIVE • CREATE
 
   </text>
 
 
-  <!-- Animated underline -->
-
-  <rect x="1010"
-        y="335"
-        width="500"
+  <rect x="1080"
+        y="315"
+        width="400"
         height="3"
         rx="2"
         fill="#5DEAFF">
 
     <animate attributeName="width"
-             values="70;500;70"
+             values="60;400;60"
              dur="3s"
              repeatCount="indefinite"/>
 
     <animate attributeName="x"
-             values="1260;1010;1260"
+             values="1280;1080;1280"
              dur="3s"
              repeatCount="indefinite"/>
 
@@ -490,39 +425,37 @@
 </g>
 
 
-<!-- ================================================= -->
-<!-- METHODS -->
-<!-- ================================================= -->
+<!-- PROCESS -->
 
 <g font-family="monospace"
    font-size="14"
    fill="#67EFFF"
    opacity=".35">
 
-  <text x="90" y="410">
-    RAW RANGE
+  <text x="80" y="410">
+    EXISTING
   </text>
 
-  <text x="400" y="410">
-    SCALE
+  <text x="300" y="410">
+    COMBINE
   </text>
 
-  <text x="610" y="410">
-    MIN-MAX
+  <text x="470" y="410">
+    DERIVE
   </text>
 
-  <text x="850" y="410">
-    STANDARDIZE
+  <text x="650" y="410">
+    ENGINEER
   </text>
 
-  <text x="1160" y="410">
-    MODEL READY
+  <text x="900" y="410">
+    NEW FEATURE
   </text>
 
 </g>
 
 
-<!-- Bottom line -->
+<!-- BOTTOM -->
 
 <path d="M70 450H1530"
       stroke="#5DEAFF"
@@ -531,25 +464,23 @@
       opacity=".25"/>
 
 
-<!-- Technical text -->
-
 <g font-family="monospace"
    font-size="13"
    fill="#65EFFF"
    opacity=".2">
 
-  <text x="1010" y="90">
-    MINMAXSCALER • STANDARDSCALER • ROBUSTSCALER
+  <text x="980" y="90">
+    FEATURE ENGINEERING • DERIVED VARIABLES • INTERACTIONS
   </text>
 
-  <text x="1100" y="465">
-    RAW FEATURES → SCALED FEATURES → MODEL READY
+  <text x="1080" y="465">
+    RAW FEATURES → CONSTRUCT → MODEL READY
   </text>
 
 </g>
 
 
-<!-- Moving shine -->
+<!-- SHINE -->
 
 <rect x="-250"
       y="0"
