@@ -4,6 +4,13 @@
 
 
 ## 🎯 Objective
+
+
+<img width="1536" height="1024" alt="ChatGPT Image Aug 8, 2026, 11_06_07 PM" src="https://github.com/user-attachments/assets/67e96178-755d-4d93-81e6-7f989f06a0f0" />
+
+
+
+
 This project builds a complete, end-to-end **data preparation pipeline** for a ride-hailing dataset — combining multiple raw sources, cleaning them, treating outliers, engineering features, and scaling everything into a single ML-ready dataset for **ride demand forecasting**.
 
 ## ♻️ WrokFlow :-
@@ -211,13 +218,6 @@ cleaned_data["surge_flag"]             = (cleaned_data["fare_per_km"] > 20).asty
 <img width="1600" height="500" alt="pic" src="https://github.com/user-attachments/assets/500abe6a-f318-4009-91a9-fb38d56f29b0" />
 
 
-
-
-
-
-
-
-
 ```python
 final_data = cleaned_data.copy()
 final_data.to_csv("final_prepared_rides_dataset.csv", index=False)
@@ -236,12 +236,7 @@ final_data.to_csv("final_prepared_rides_dataset.csv", index=False)
 
 ## 🎁 Part 8: Bonus — EDA Report & Visualizations
 
-
-
 <img width="1600" height="500" alt="pic" src="https://github.com/user-attachments/assets/f4f77619-bd88-40ae-a245-62f721d1c093" />
-
-
-
 
 
 ```python
@@ -254,16 +249,7 @@ ProfileReport(final_data, title="Ride Demand Dataset EDA Report", explorative=Tr
 
 ---
 
-## 📂 Project Workflow
-1. **Data Loading** → Import CSV, JSON, and SQL sources
-2. **Merging** → Join Riders + Trips + City Zones on `rider_id` / `zone`
-3. **Cleaning** → Mean, Mode, and KNN imputation + invalid-record removal
-4. **Outlier Handling** → Z-score, IQR, and Winsorization
-5. **Transformation** → Date features, encoding, binning, log/sqrt transforms
-6. **Scaling** → StandardScaler vs MinMaxScaler comparison
-7. **Feature Construction** → 6 new business-driven features
-8. **Export** → `final_prepared_rides_dataset.csv`
-9. **Bonus** → Auto EDA report + demand/surge visualizations
+
 
 ## 📈 Results & Insights
 - ✅ Merged 3 sources (2000 × 21) with **100% match rate**, 0 unmatched keys
@@ -273,11 +259,13 @@ ProfileReport(final_data, title="Ride Demand Dataset EDA Report", explorative=Tr
 - ✅ Dataset scaled two ways (StandardScaler & MinMaxScaler) for algorithm flexibility
 - ✅ Final dataset exported as `final_prepared_rides_dataset.csv`, fully ML-ready
 
+
 ## 📌 Expected Outcomes
 - A fully merged, cleaned, and imputed rider-trip-zone dataset with zero missing values
 - Outlier-controlled `fare_amount`, `distance_km`, and `duration_min` via Z-score/IQR detection + Winsorization
 - A rich, ML-ready feature set (encoded, scaled, and engineered) for ride-demand and surge-pricing forecasting
 - An auto-generated EDA report for fast sanity-checking
+
 
 ## ⚙️ Installation & Setup
 ```bash
