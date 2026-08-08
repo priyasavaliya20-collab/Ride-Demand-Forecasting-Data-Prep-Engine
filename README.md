@@ -53,7 +53,8 @@ The dataset contains:
 
 ## 🔗 Part 1: Data Loading & Merging
 
-<img width="1600" height="500" alt="pic" src="https://github.com/user-attachments/assets/9c7cad7d-687d-44ef-9282-13792ecc968f" />
+<img width="1600" height="500" alt="pic" src="https://github.com/user-attachments/assets/118b78f4-f9ca-42b9-a89b-a0a692b76176" />
+
 
 Loaded three different formats and merged them into one table.
 
