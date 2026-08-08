@@ -6,15 +6,12 @@
 ## 🎯 Objective
 This project builds a complete, end-to-end **data preparation pipeline** for a ride-hailing dataset — combining multiple raw sources, cleaning them, treating outliers, engineering features, and scaling everything into a single ML-ready dataset for **ride demand forecasting**.
 
-## 📄 Problem Statement
-Ride data is scattered across three different sources (rider profiles, trip logs, city zone info) in three different formats, with missing values, invalid records, and outlier fares/distances. The task is to merge, clean, transform, and enrich this data into one consistent, model-ready table.
+## ♻️ WrokFlow :-
 
-The dataset contains:
-- **Rider details** — demographics, signup info, ride history (`riders.csv`)
-- **Trip records** — fare, distance, duration, payment mode (`trips.json`)
-- **Zone info** — population density, traffic index, avg. speed (`city_zones.sql`)
-- **Target-relevant fields** — `surge_flag` for surge-pricing prediction
-  
+<img width="1200" height="620" alt="pic" src="https://github.com/user-attachments/assets/3b34c692-d359-4eb3-a4fd-2f51f9dcf6bc" />
+
+
+
 ## 📂 Project Files
 | 📄 File | 📌 Description |
 |---|---|
