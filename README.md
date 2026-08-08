@@ -6,7 +6,7 @@
 ## 🎯 Objective
 
 
-<img width="1536" height="1024" alt="ChatGPT Image Aug 8, 2026, 11_06_07 PM" src="https://github.com/user-attachments/assets/67e96178-755d-4d93-81e6-7f989f06a0f0" />
+<img width="1024" height="1015" alt="ChatGPT Image Aug 8, 2026, 11_06_07 PM" src="https://github.com/user-attachments/assets/67e96178-755d-4d93-81e6-7f989f06a0f0" />
 
 
 
