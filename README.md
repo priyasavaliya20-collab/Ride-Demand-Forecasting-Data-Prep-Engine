@@ -78,6 +78,10 @@ final_merged_data.drop(columns=["zone_name"], inplace=True)
 
 ## 🧹 Part 2: Data Cleaning
 
+<img width="1600" height="500" alt="pic" src="https://github.com/user-attachments/assets/0d250ba5-f49c-4cfb-b362-c2dc53d9e330" />
+
+
+
 ```python
 # Numeric missing values → mean
 numeric_cols = cleaned_data.select_dtypes(include=np.number).columns
